@@ -1,88 +1,93 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
-  <meta charset='utf-8'>
+	<meta charset="UTF-8" />
+	<title>$ sharedir</title>
+	<style type="text/css">
+		@-webkit-keyframes cursor-blink {
+			0% {
+				opacity:0;
+			}
+			50% {
+				opacity:1;
+			}
+			100% {
+				opacity:0;
+			}
+		}
+		
+		body {
+			width:600px;
+			margin:50px 60px;
+		}
 
-  <title>caiogondim/sharedir @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #3cc62d;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #c339d2; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #c339d2; }
-    h3 { text-align: center; color: #c339d2; }
-    a { color: #c339d2; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+		h1 {
+			border-bottom:1px solid #EEE;
+			position:relative;
+			font-size:48px;
+			font-weight:normal;
+		}
+		
+		h2 {
+			font-weight:normal;
+			font-size:28px;			
+		}
+		
+		span#cursor {
+			width:26px;
+			height:45px;
+			background-color:#000;
+			position:absolute;
+			left:294px;
+			top:6px;
+			-webkit-animation: cursor-blink 1s step-end infinite;
+		}
+		
+		section {
+			margin-bottom:80px;
+		}		
+		
+		p {
+			line-height:150%;
+		}
+		
+		div#video-wrapper {
+			overflow:hidden;
+			height:446px;
+		}
+		
+		video {
+			position:relative;
+			top:-1px;
+			left:-1px;
+		}
+	</style>
 </head>
-
 <body>
-  <a href="https://github.com/caiogondim/sharedir"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/caiogondim/sharedir/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/caiogondim/sharedir/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/caiogondim/sharedir">sharedir</a>
-      <span class="small">by <a href="https://github.com/caiogondim">caiogondim</a></span></h1>
-
-    <div class="description">
-      A small terminal tool to share a directory over HTTP
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Caio Gondim (caio@gond.im)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Caio Gondim (caio.gondim@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/caiogondim/sharedir/zipball/master">zip</a> or
-      <a href="https://github.com/caiogondim/sharedir/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/caiogondim/sharedir</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/caiogondim/sharedir">caiogondim/sharedir</a>
-    </div>
-
-  </div>
-
+	<h1><code>$ sharedir </code><span id="cursor"></span></h1>
+	<section>
+		<h2>Description</h2>
+		<p><code>$ sharedir </code> is a command-line tool for sharing the current directory in your Terminal over HTTP.</p>
+		<p>You just do a <code>$ cd </code> over the directory you wanna share, run <code>$ sharedir </code> and you're done. All the files in this folder are now shared.</p>		
+		<p>Just go to <a href="http://localhost:8000">http://localhost:8000</a> in your browser and browse your files like a boss. Or tell a friend to visit your IP at the port 8000, something like <code>192.168.0.10:8000</code>, and share your files easily.</p>
+	</section>
+	<section>
+		<h2>Demo</h2>
+		<div id="video-wrapper">
+			<video src="demo.m4v" width="600px" controls="controls" />
+		</div>		
+	</section>
+	<section>
+		<h2>Installation</h2>
+		<p><code>$ sharedir</code> is distributed over homebrew, the most awesome package manager for OS X. Just install homebrew in your Mac, run <code>$ brew install sharedir</code>, restart Terminal and go nuts.</p>
+		<p>In case you can't see <code>$ sharedir </code> in Homebrew, update the list of available packages with the command <code>$ brew update </code> and then install <code>$ sharedir </code> with <code>$ brew install sharedir </code></p>
+		<p>If you not using Homebrew (which you really should, btw) you can download <code>$ sharedir</code>, extract it and place it on the folder /usr/bin along with your other CLI tools.</p>		
+	</section>
+	<section>
+		<h2>About</h2>
+		<p>$ sharedir was created by <a href="#">@caio_gondim</a> in a weekend to avoid boredom.</p>
+		<p>If you found a bug or have an idea to improve the tool, please, don't hesitate to open an issue in GitHub.</p>
+		<p>And if you wanna keep updated with the tool, follow me on Twitter at <a href="#">@caio_gondim</a>.</p>
+	</section>
 </body>
 </html>
