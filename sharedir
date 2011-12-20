@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+# packages
+import SimpleHTTPServer
+import SocketServer
+
+# variables
+port = 8000
+# dir =
+
+# initialize the server
+Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+httpd = SocketServer.TCPServer(("", port), Handler)
+print "Sharing directory at port", port
+httpd.serve_forever()
